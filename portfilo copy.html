@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        html{
+            scroll-behavior: smooth;
+            overflow: auto;
+            scrollbar-width: none;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+        }
+        body{
+            background-color: black;
+            font-family: sans-serif;
+          
+            
+        }
+        nav{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            height: 70px;
+            top: 0;
+            background-color: black;
+            z-index: 1;
+            
+           
+            
+        }
+        h3{
+            margin: 10px;
+           font-size: 30px;
+            color: white;
+            
+        }
+        nav h3::first-letter{
+            color: red;
+
+        }
+       nav ul li{
+           float: left;
+           margin: 10px;
+           list-style-type: none;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+       
+           nav ul li a:hover {
+            color: red;
+            transition: 0.5s linear;
+            border-radius: 0px 10px 20px 10px;
+            border-bottom: 2px solid white;
+            
+            
+        }
+
+        
+      /*  @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: white; }
+        }*/
+       
+        .text-container {
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height:150px;
+            color: white;
+            z-index: -1;
+            
+           
+        }
+        
+        .text {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .text-line {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 40px;
+            font-size: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeSlide 6s infinite;
+            font-weight: bold;
+            background: linear-gradient(90deg,blue, #df099e, #06e919);
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .text-line:nth-child(1) {
+            animation-delay: 0s;
+        }
+        
+        .text-line:nth-child(2) {
+            animation-delay: 3s;
+        }
+       
+        
+        @keyframes fadeSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            10% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            40% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+        .db-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0px 100px;
+            height: 100vh;
+            width: 800px;
+           
+        }
+        .img-container img{
+            width: 300px;
+            height: 300px;
+           border-radius: 20% 40% 10% /10% 20% 90%;
+        }
+       
+        h2{
+            color: white;
+            line-height: 40px;
+        }
+        span{
+            color: red;
+        }
+        
+       /* @media (max-width:650px){
+           
+            .db-container{
+                width: 800px;
+            }
+            .img-container img{
+                width: 300px;
+            height: 300px;
+            }
+            .text-container{
+                width:300px ;
+                height: 150px;
+            }
+            .text{
+                width: 100%;
+            }
+            .about-container{
+                width: 900px;
+                height: 510px;
+            }
+            .about-text{
+                width: 700px;
+                height:500px;
+               }
+               .myskills1-container, .myskills2-container{
+                width: 1000px;
+                margin: 0px 50px 0px 30px;
+               }
+               .boxes,.boxes1{
+                width: 100%;
+               }
+               .project-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0px 120px;
+                
+              }
+              .container{
+                width: 900px;
+                margin: 20 auto;
+                
+              }
+              .row{
+                display: block;
+              }
+           
+           
+        }
+        @media (max-width:550px){
+           
+            .db-container{
+                width:800px;
+            }
+            .img-container img{
+                width: 300px;
+            height: 300px;
+            }
+            .text-container{
+                width: 300px ;
+                height: 150px;
+            }
+            .text{
+                width: 100%;
+            }
+            .about-container{
+                width: 900px;
+                height: 510px;
+            }
+            .about-text{
+                width: 700px;
+                height:500px;
+               }
+               .myskills1-container, .myskills2-container{
+                width: 1000px;
+                margin: 0px 50px 0px 30px;
+               }
+               .boxes,.boxes1{
+                width: 100%;
+               }
+               .project-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0px 10px 0px 0px;
+                
+              }
+              .container{
+                width: 900px;
+                margin: 20 auto;
+              }
+           
+           
+           
+          
+            
+
+        }
+        @media (max-width:450px){
+           
+          
+             .db-container{
+                width: 800px;
+            }
+            .img-container img{
+                width: 300px;
+            height: 300px;
+            }
+            .text-container{
+                width: 300px ;
+                height: 150px;
+            }
+            .text{
+                width: 100%;
+            }
+            .about-container{
+                width: 900px;
+                height: 510px;
+            }
+            .about-text{
+                width: 700px;
+                height:500px;
+               }
+               .myskills1-container, .myskills2-container{
+                width: 1000px;
+                margin: 0px 50px 0px 30px;
+               }
+               .boxes,.boxes1{
+                width: 100%;
+               }
+               .project-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0px 120px;
+                
+              }
+              .container{
+                width: 900px;
+                margin: 20 auto;
+              }
+           
+            
+
+        }
+        @media (max-width:350px){
+           
+            .db-container{
+                width: 800px;
+            }
+           
+            .img-container img{
+                width: 300px;
+                height: 300px;
+            }
+            .text-container{
+                width: 300px ;
+                height: 150px;
+            }
+            .text{
+                width: 100%;
+            }
+            .about-container{
+                width: 900px;
+                height: 510px;
+            }
+            .about-text{
+                width: 700px;
+                height:500px;
+               }
+               .myskills1-container, .myskills2-container{
+                width: 1000px;
+                margin: 0px 50px 0px 30px;
+               }
+               .boxes,.boxes1{
+                width: 100%;
+               }
+               .project-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0px 120px;
+                
+              }
+              .container{
+                width: 900px;
+                margin: 20 auto;
+              }
+           
+           
+           
+            
+        }
+        @media (max-width:240px) {
+           
+          
+            .db-container{
+                width: 800px;
+            }
+           
+            .img-container img{
+                width: 300px;
+                height: 300px;
+            }
+            .text-container{
+                 width: 300px ;
+                height: 150px;
+            }
+            .text{
+                width: 100%;
+            }
+            .about-container{
+                width: 900px;
+                height: 510px;
+            }
+            .about-text{
+                width: 700px;
+                height:500px;
+               }
+               .myskills1-container, .myskills2-container{
+                width: 1000px;
+                margin: 0px 50px 0px 30px;
+               }
+               .boxes,.boxes1{
+                width: 100%;
+               }
+               .project-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 0px 120px;
+                
+              }
+              .container{
+                width: 900px;
+                margin: 20 auto;
+              }
+            
+        }*/
+       
+        
+       .about-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 900px;
+       height: 510px;
+       color: white;
+        margin: 0px 50px;
+       
+       }
+       .about-img img{
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        transition: 0.5s ease-in;
+        border-radius: 10px;
+       
+        
+
+       }
+       .about-img img:hover{
+        border-radius: 10% 30% 50% 70%;
+        transition: 0.5s ease-in-out;
+        transform:scale(1.1);
+
+
+       }
+       .about-img{
+        width: 400px;
+        height: 500px;
+        margin:0px 30px 0px 30px;
+       }
+       .about-text{
+        display: block;
+       text-align: left;
+        width: 500px;
+        height:500px;
+        margin-left: 20px;
+        margin-top: -200px;
+
+       }
+      
+       .about-text h1{
+       margin-top: 110px;
+       text-align: left;
+       line-height: 50px;
+       color: red;
+       
+       }
+       .para-div {
+        display: flex;
+        margin-top: 20px;
+        
+       
+       }
+       .para-link {
+        margin: 0px 40px 0px 0px;
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+    }
+       .para-link::after{
+        content: " ";
+        width: 0;
+        height: 2px;
+        background-color:rgb(144, 3, 3);
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        transition: width 0.4s ease, left 0.4s ease;
+       
+       }
+        .para-link:hover::after {
+        width: 100%;
+        left: 0;
+    }
+       
+      
+
+
+       .para-link{
+        margin: 0px 40px 0px 0px ;
+        cursor: pointer;
+        position: relative;
+       }
+       .dropdown-container{
+        margin-top: 20px;
+        display: none;
+       }
+       .dropdown-container h6{
+        line-height: 20px;
+       }
+       .dropdown-container.active-tab{
+        display: block;
+        
+        transition:0.5s ease-in;
+       }
+       .myskills1-container, .myskills2-container{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+        color: white;
+        margin: 0px 20px 0px 0px ;
+        z-index: -1;
+        width: 1000px;
+        padding: 0px 30px ;
+       
+       }
+       
+      
+       .boxes,.boxes1{
+        width: 33%;
+        height: 300px;
+        border-radius: 10px;
+        background-color: #262626;
+        overflow: auto;
+        scrollbar-width: none;
+        transition: transform 0.5s linear;
+    
+       }
+       .boxes:hover,.boxes1:hover{
+        background-color: #ff004f;
+        transform: translateY(-20px);
+       }
+       
+       
+       .boxes h5{
+        text-align: center;
+        line-height: 30px;
+       }
+       .boxes1 h5{
+        text-align: center;
+        line-height: 30px;
+        width: 100%;
+       }
+      
+      
+       .myskills h1{
+        color: red;
+        text-align: center;
+        margin-top: 100px;
+        
+       }
+       .boxes h3,.boxes1 h3{
+        text-align: center;
+       }
+      
+      .boxes i{
+        font-size: 50px;
+        display: flex;
+        margin: 20px ;
+       justify-content: center;
+      
+      }
+      .boxes1 i{
+        font-size: 50px;
+        display: flex;
+        margin: 20px ;
+       justify-content: center;
+      
+      }
+      .project-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 800px;
+        margin: 0px 120px 0px 120px;
+        
+      }
+      .project-content{
+        color: white;
+       
+      }
+      .project1,.project2,.project3{
+        text-align: center;
+        
+       
+
+      }
+      .project1 img ,.project2 img,.project3 img{
+        width: 250px;
+        height: 250px;
+        border-radius: 10px;
+        opacity: 0.5;
+        transition:0;
+        
+      }
+      .project1 img:hover,.project2 img:hover,.project3 img:hover{
+        content: "hover me";
+        opacity: 2;
+        transition: 0.5s ease-in-out;
+        transform: scale(1.1);
+
+      }
+      .project1 a,.project2 a ,.project3 a{
+        text-decoration:underline;
+      }
+      .project1 a:visited,.project2 a:visited,.project3 a:visited{
+        color: red;
+      }
+      .project1 a:active,.project2 a:active,.project3 a:active{
+        color: blue;    
+      }
+      .project1 a:hover,.project2 a:hover,.project3 a:hover{
+        color: greenyellow;
+        transition: 0.3s ease-in;
+      }
+      .project-container h1{
+        color: red;
+        text-align: center;
+      }
+      .title{
+        text-decoration: underline red;
+        font-size: 30px;
+      }
+      .end{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 400px;
+        background-color: #212020;
+      }
+      .container {
+    
+        color: white;
+        width: 900px;
+        margin: 0px 0px 0px 50px ;
+        line-height: 25px;
+        background: #242323;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
+    }
+    
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    header h1 {
+        font-size: 2.5em;
+        margin-bottom: 10px;
+    }
+    
+    header p {
+        font-size: 1.1em;
+    }
+    
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    section h2 {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        color: #eee3e3;
+        border-bottom: 2px solid #0066cc;
+        padding-bottom: 20px;
+    }
+    
+    section ul {
+        list-style-type: disc;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+    
+    table, th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+    }
+    
+    th {
+        background-color: #0066cc;
+        color: #fff;
+    }
+    
+    td {
+        text-align: center;
+    }
+    .contact-info-left {
+        flex-basis: 35%;
+      }
+      .contact-info-right {
+        flex-basis: 60%;
+      }
+      .contact-info-left p {
+        margin-top: 30px;
+      }
+      .contact-info-left p i {
+        color: #ff004f;
+        margin-right: 15px;
+        font-size: 20px;
+      }
+      .social-icons {
+        margin-top: 20px;
+      }
+      .social-icons a {
+        text-decoration: none;
+        font-size: 30px;
+        color: #ababaa;
+        margin-right: 20px;
+        display: inline-block;
+        transition: transform 0.5s;
+      }
+      .social-icons a:hover {
+        color: #ff004f;
+        transform: translateY(-5px);
+      }
+      .btn.btn2 {
+        display: inline-block;
+        background: #ff004f;
+        text-decoration: none;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 20px;
+        outline: none;
+        border: none;
+      }
+      .contact-info-right form {
+        width: 100%;
+      }
+      form input,
+      form textarea {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin-bottom: 20px;
+        color: white;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      form .btn2 {
+        padding: 14px 60px;
+        margin-top: 20px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+      .copy-right {
+       
+        width: 100%;
+        text-align: center;
+        padding: 25px;
+        background-color: #262626;
+        color: white;
+      }
+      .copy-right i {
+        color: #ff004f;
+      }
+      .btn2:hover {
+        background-color: #d86489;
+      }
+     
+  
+    </style>
+</head>
+<body>
+<!-- --------------portfilo------------ -->
+    <nav>
+        <h3>Sreedhar</h3>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#">Portfilo</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume"> My Resume</a></li>
+        </ul>
+    </nav>
+   <div class="db-container">
+
+            <div class="text-container">
+                        
+                        <div class="text">
+                            <div class="text-line">I`am Web Developer</div>
+                            <div class="text-line">I`am full stack Developer</div>
+                            <br><br>
+                            <h2> Hi, I`m <span>Sreedhar</span></h2>
+                            <h2> Vemulapati From India</h2>
+                        </div>
+                        
+            </div>
+        
+            <div class="img-container">
+                <img src="./DALL·E 2024-08-18 20.59.44 - A realistic, front-facing portrait of a modern programmer, sitting at a desk with multiple monitors displaying code. The person has focused eyes, wear.webp" alt="">
+            </div>
+   </div>
+<!-- ----------------------about------------ -->
+
+   <div class="about-container" id="about">
+            <div class="about-img">
+                <img src="./portrait-young-bearded-indian-businessman-against-black-background-moody-lighting_466689-45525.jpg" alt="">
+
+            </div>
+            <div class="about-text">
+                            <h1>About Me</h1>
+                            <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I’m Vemulapati Sreedhar Reddy, a passionate web developer with a solid  background in HTML, CSS, JavaScript, Python, SQL, and React.js. I completed my 10th grade at ZPHS Nallabhoyana Palli and my 12th grade at Sri Sathya Sai  Junior College. I graduated with a degree from Sri Venkateswara Degree College  in 2023. Right now, I’m focusing on enhancing my skills through hands-on projects , such as creating responsive web pages and dynamic user interfaces. Recently, I’ve been working on a portfolio site with animated effects  and interactive elements, reflecting my enthusiasm for cutting-edge web development.</p>
+                                   
+                                   <div class="para-div">
+                                        <p class=" para-link active-link" onclick="opentab('skills',event)">Skills</p>
+                                        <p class="para-link" onclick="opentab('experience',event)">Experience</p>
+                                        <p class="para-link" onclick="opentab('education',event)">Education</p>
+                                    </div>
+
+                                    <div class="dropdown-container active-tab" id="skills">
+                                        <h6><span>HTML: </span> Structuring content and elements for web pages using semantic tags.</h6>
+                                        <h6><span>CSS: </span> Styling web pages with layouts, colors, fonts, and responsive design <br> techniques.</h6>
+                                        <h6><span>JS: </span>Implementing dynamic functionality and interactivity on web pages.</h4>
+                                        <h6><span>PYTHON: </span> Writing scripts, developing applications, and working with data <br> manipulation.</h6>
+                                        <h6><span>SQL: </span> Managing and querying databases to retrieve and manipulate data.</h6>
+                                        <h6><span>REACT JS: </span> Building interactive and efficient user interfaces with a <br>component-based approach.</h6>
+                                    </div>
+
+                                    <div class="dropdown-container " id="experience">
+                                    <h6><span>"HI, I`am Sreedhar,</span> I am a passionate and dedicated fresher with strong foundational skills in web development <br> and programming. Eager to apply my knowledge in a professional setting <br> and grow through hands-on experience."</h6>
+                                    </div>
+
+                                    <div class="dropdown-container " id="education">
+                                        <h6><span>10th Grade:</span> Completed 10th at ZPHS Nallabhoyana Palli, 2017 pass out.</h6>
+                                        <h6><span>12th Grade:</span> Completed 12th at Sri Sathya Sai Junior College, Anantapuram, 2019 pass out.</h6>
+                                        <h6><span>Degree:</span> Graduated from Sri Venkateswara Degree College, affiliated with <br>Sri Krishnadevaraya University, 2023 pass out.</h6>
+                                    </div>
+                
+
+            </div>
+            
+   </div>
+   <!-- ----------------my skills------------ -->
+   <div class="myskills" id="skills">
+     <h1>My Skilss </h1></div><br><br>
+    <div class="myskills1-container">
+        <div class="boxes">
+            <i class="fa-solid fa-code"></i>
+            <h3 class="h">HTML</h3>
+            <h5>Elements & Tags</h5>
+            <h5>Attributes</h5>
+            <h5>Head & Body</h5>
+            <h5>Forms</h5>
+            <h5>Links & Navigation</h5>
+            <h5>Images</h5>
+            <h5>Lists</h5>
+            <h5>Tables</h5>
+            <h5>Semantics</h5>
+            <h5>Multimedia (Audio & Video)</h5>
+            
+        </div>
+        <div class="boxes">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS</h3>
+            <h5>Selectors and Specificity</h5>
+            <h5>Box Model</h5>
+            <h5>Positioning</h5>
+            <h5>Flexbox</h5>
+            <h5>Grid Layout</h5>
+            <h5>Typography</h5>
+            <h5>Colors and Backgrounds</h5>
+            <h5>Responsive Design</h5>
+            <h5>Animations and Transitions</h5>
+            <h5>Pseudo-classes and Pseudo-elements</h5>
+
+        </div>
+        
+
+        <div class="boxes">
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+            <h5>Variables and Data Types</h5>
+            <h5>Functions and Scope</h5>
+            <h5>Control Flow (Loops and Conditionals)</h5>
+            <h5>Events and Event Handling</h5>
+            <h5>DOM Manipulation</h5>
+            <h5>Asynchronous JavaScript (Promises, async/await)</h5>
+            <h5>Object-Oriented Programming</h5>
+            <h5>Array Methods</h5>
+            <h5>Error Handling,APIs and Fetch</h5>
+            
+        </div>
+    </div><br><br><br><br>
+    <div class="myskills2-container">
+        <div class="boxes1">
+            <i class="fa-brands fa-python"></i>
+            <h3>Python</h3>
+            <h5>Variables and Data Types</h5>
+            <h5>Control Flow (Loops and Conditionals)</h5>
+            <h5>Functions and Lambda Expressions</h5>
+            <h5>Data Structures (Lists, Tuples, Dictionaries, Sets)</h5>
+            <h5>File Handling</h5>
+            <h5>Exception Handling</h5>
+            <h5>Object-Oriented Programming</h5>
+            <h5>Modules and Packages</h5>
+            <h5>Decorators and Generators</h5>
+            <h5>Working with Libraries (e.g., NumPy, Pandas)</h5>
+
+        </div>
+        <div class="boxes1">
+            <i class="fa-solid fa-database"></i>
+            <h3>SQL</h3>
+            <h5>Basic SQL Queries (SELECT, FROM, WHERE)</h5>
+            <h5>Joins (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN)</h5>
+            <h5>Aggregations (SUM, COUNT, AVG, MIN, MAX)</h5>
+            <h5>Grouping and Sorting (GROUP BY, ORDER BY)</h5>
+            <h5>Subqueries and Nested Queries</h5>
+            <h5>Database Normalization and Design</h5>
+            <h5>Indexes and Performance Optimization</h5>
+            <h5>Transactions and Concurrency Control</h5>
+            <h5>Views and Stored Procedures</h5>
+            <h5>SQL Data Types and Constraints</h5>
+
+        </div>
+        <div class="boxes1">
+            <i class="fa-brands fa-react"></i>
+            <h3>React js</h3>
+            <h5>Components and Props</h5>
+            <h5>State Management</h5>
+            <h5>Lifecycle Methods</h5>
+            <h5>Event Handling</h5>
+            <h5>Conditional Rendering</h5>
+            <h5>Forms and Controlled Components</h5>
+            <h5>Hooks (useState, useEffect, etc.)</h5>
+            <h5>Context API</h5>
+            <h5>Routing with React Router</h5>
+            <h5>Performance Optimization</h5>
+
+
+        </div>
+    </div><br>
+<!-- -------------projects-------- -->
+<div class="project-container" id="projects">
+    <div class="project-content"><br><br><br><br><br><br><h1>Projects</h1><br>
+        <div class="project1">
+            
+                   <span class="title"> Project Title:
+                    Basic Calculator</span> <br><br>
+
+                    Project Description: <br><br>
+                    A simple, responsive calculator that can perform basic arithmetic operations such <br> as addition, subtraction, multiplication, and division. The project will be built using <br> HTML for structure, CSS for styling, and JavaScript for functionality. <br><br>
+
+                    Skills Required: <br><br>
+                    HTML: To create the structure of the calculator. <br><br>
+                    CSS: To style the calculator and make it visually appealing. <br><br>
+                    JavaScript: To handle the calculator's logic and functionality. <br><br>
+                    Features: <br><br>
+                    Basic Operations: Addition, Subtraction, Multiplication, Division. <br><br>
+                    Clear Functionality: A button to clear the input. <br><br>
+                    Responsive Design: The calculator will adjust to different screen sizes. <br><br>
+                    Keyboard Support: Allow input via keyboard for a better user experience. <br><br>
+                    <a href="./calculator.html">Click for Demo</a><br><br>
+                     <img src="./DALL·E 2024-08-19 21.41.17 - A simple and clean calculator interface with a modern design. The calculator has a dark display area at the top with white text showing the numbers an.webp" alt="">
+                
+        </div>
+        <div class="project2">
+            <br>
+           <span  class="title"> Project Title:
+            Responsive User Information Form</span> <br><br>
+            
+            Project Description: <br><br>
+            A form that collects user information such as name, email, phone number, and <br> address. The form will include validation, responsive design, and a submit button <br>that processes the data. This form can be used for various applications like registrations, feedback, or contact purposes. <br>
+            
+            Skills Required: <br> <br>
+            HTML: To create the form structure. <br><br>
+            CSS: To style the form and make it responsive. <br><br>
+            JavaScript: To add form validation and handle data submission. <br><br>
+            Features: <br> <br>
+            Input Fields: Text fields for Name, Email, Phone Number, and Address. <br> <br>
+            Validation: Basic client-side validation using HTML and JavaScript. <br> <br>
+            Responsive Design: The form adjusts to different screen sizes. <br> <br>
+            Submit Button: Submits the form data. <br> <br>
+            Clear Button: Clears the form data. <br> <br>
+             <a href="./loginform.html">Click for Demo</a><br><br>
+             <a href="./loginform2.html">Click for Demo</a><br><br>
+             <a href="./loginform3.html">Click for Demo</a><br><br>
+             <a href="./loginform4.html">Click for Demo</a><br><br>
+             <a href="./loginform5.html">Click for Demo</a><br><br>
+              <img src="./website-login-page-template-design_1017-30785.avif" alt="">
+         
+ </div>
+ <div class="project3"><br><br>
+   <span class="title"> Project Title:
+    Personal Portfolio Website :</span><br><br>
+
+Project Description: <br> <br>
+A responsive portfolio website that displays your personal information, skills, <br> projects, experience, and contact details. The website will be professional, visually <br>appealing, and easy to navigate. <br> <br>
+
+Skills Required: <br> <br>
+HTML: For creating the structure of the website.<br> <br>
+CSS: For styling the website and making it responsive.<br> <br>
+JavaScript: For adding interactivity and enhancing the user experience.<br> <br>
+Features:<br> <br>
+Home Section: A brief introduction about yourself.<br> <br>
+About Section: Detailed information about your background, skills, and education.<br> <br>
+Projects Section: A showcase of your projects with descriptions, images, and links.<br> <br>
+Skills Section: A list of your technical skills, possibly with progress bars or ratings.<br> <br>
+Contact Section: A form for visitors to get in touch with you.<br> <br>
+Responsive Design: The website will be mobile-friendly and adjust to various screen sizes.<br> <br>
+Navigation Bar: Smooth scrolling navigation links to different sections of the website.<br> <br>
+            
+   
+     <a href="">Click for Demo</a><br><br>
+      <img src="./Portfolio-website-of-the-product-designer-and-front-end-developer-Adham-Dannaway-1024x869.png" alt="">
+ 
+</div>
+                   
+
+    </div>
+</div>
+<!-- ------------------resume--------- -->
+<div class="container" id="resume">
+    <header>
+        <h1>Vemulapati Sreedhar Reddy</h1>
+        <p>Email: <a href="mailto:youremail@example.com">sreedharreddyv1218@gmail.com</a> | Phone: [7702199615]</p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/sreedhar-reddy77">My Linkedin profile</a> | GitHub: <a href="https://github.com/sreedhar-vemulapati">My git profile</a></p>
+    </header>
+    
+    <section>
+        <h2>Objective</h2>
+        <p>Highly motivated Python Full-Stack Developer with strong academic background and hands-on experience in developing dynamic web applications. Proficient in front-end and back-end technologies, including HTML, CSS, JavaScript, Python, SQL, React.js, Flask, and Java. Seeking an entry-level position to apply my skills and contribute to innovative projects.</p>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <ul>
+            <li><strong>Front-End Technologies:</strong> HTML, CSS, JavaScript, React.js</li>
+            <li><strong>Back-End Technologies:</strong> Python, Flask, Java</li>
+            <li><strong>Database Management:</strong> SQL</li>
+            <li><strong>Web Development:</strong> Responsive Design, CRUD Operations, RESTful APIs</li>
+            <li><strong>Version Control:</strong> Git, GitHub</li>
+            
+        </ul>
+        
+    </section>
+    
+    <section>
+        <h2 class="edu">Education</h2>
+        <table>
+            <tr>
+                <th>Degree</th>
+                <th>Institution</th>
+                <th>Year of Completion</th>
+                <th>Percentage</th>
+            </tr>
+            <tr>
+                <td>Bachelor of Science in Computer Science</td>
+                <td>Sri Venkateswara Degree College, SK University</td>
+                <td>2023</td>
+                <td>70%</td>
+            </tr>
+            <tr>
+                <td>Intermediate (12th Grade)</td>
+                <td>Sri Sathya Sai Junior College, Anantapuram</td>
+                <td>2019</td>
+                <td>82%</td>
+            </tr>
+            <tr>
+                <td>10th Grade</td>
+                <td>ZPHS Nallabhoyana Palli</td>
+                <td>2017</td>
+                <td>85%</td>
+            </tr>
+        </table>
+    </section>
+
+    <section>
+        <h2>Projects</h2>
+        <ul>
+            <li><strong>Portfolio Website:</strong> Developed a personal portfolio website using HTML, CSS, JavaScript, and React.js. Showcased various projects, highlighting technical skills and coding expertise. Implemented responsive design techniques to ensure the site is accessible on all devices.</li>
+            <li><strong>Responsive Web Page Development:</strong> Created a responsive webpage that adjusts to screen sizes ranging from 700px to 100px using HTML, CSS, and JavaScript. Integrated CSS animations to enhance user interactions.</li>
+            <li><strong>CRUD Operations with React.js:</strong> Built a web application that performs CRUD operations using React.js for the front end and Flask for the back end. Integrated SQL databases to store and retrieve user data efficiently.</li>
+            <li><strong>Calculator Application:</strong> Developed a dynamic calculator using HTML, CSS, and JavaScript. Focused on a clean UI and robust functionality.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Certifications</h2>
+        <ul>
+            <li>Python Internship cirtificate-Health Management System | BrightGeeks Technologies Pvt.Ltd., | 28/02/2024</li>
+            <li>Ai Matser class | Freedom with AI  | 17-08-2024</li>
+        </ul>
+    </section>
+
+    <section>
+        
+        <h2>Personal Projects</h2>
+        <ul>
+            <li><strong>Python Game Concept:</strong> Designed a game that teaches basic Python programming skills through interactive coding challenges.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Additional Skills</h2>
+        <ul>
+            <li>Problem-Solving</li>
+            <li>Team Collaboration</li>
+            <li>Attention to Detail</li>
+            <li>Agile Methodologies</li>
+        </ul>
+    </section>
+</div>
+<!-- ----------------contact--------- -->
+ <br>
+<div id="contact">
+    <div class="container">
+      <div class="row">
+        <div class="contact-info-left">
+          <h1 class="subtitle">Contact Me</h1>
+
+          <p><i class="fa-regular fa-envelope"></i>Contact@example.com</p>
+
+          <p><i class="fa-solid fa-phone"></i>123456788</p>
+          <div class="social-icons">
+            <a href="https://facebook.com/"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://instagram.com/"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="https://linkedin.com/"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+          </div>
+          <a href="" class="btn btn2">Download CV</a>
+        </div>
+        <div class="contact-info-right">
+          <form  name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="your name" required />
+            <input
+              type="text"
+              name="Email"
+              placeholder="Your email"
+              required
+            />
+            <textarea
+              name="Message"
+              rows="6"
+              placeholder="Your message"
+            ></textarea>
+            <button  class="btn btn2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="copy-right">
+        <p>
+          copyright &#169; made with <i class="fa-solid fa-heart"></i> by
+          Vemulapati Sreedhar Reddy
+        </p>
+      </div>
+
+
+
+   <!-- ------------script---------- -->
+  <script>
+    var tablinks = document.getElementsByClassName("para-link ");
+    var tabcontents = document.getElementsByClassName("dropdown-container");
+
+    function opentab(tabname,event){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link")
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab")
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+        event.preventDefault();
+
+    }
+  </script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby8ftqT-6U4Ms8kbWlZYTQpcLzWlPlJh9w97M2OMlDgBJgOJ8vlaHds_4rS1rd8WUXE/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
