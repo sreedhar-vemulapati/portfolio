@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background-color: rgb(197, 210, 233);
+        }
+        .container{
+            position: relative;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           width: 100%;
+            height: 100vh;
+            animation: slowup 2s  ease;
+           
+        }
+        .logo-box{
+            position: relative;
+            width: 250px;
+            height:420px;
+            background-color: rgb(226, 233, 241);
+            border-radius: 10px;
+        }
+        img{
+            position: absolute;
+            top: 20px;
+            height: 50px;
+            width: 50px;
+            mix-blend-mode:multiply;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+        }
+        .name-box{
+            position: absolute;
+            top: 80px;
+            left: 25px;
+            border-radius: 10px;
+            background-color: white;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .mailbox{
+            position: absolute;
+            top: 150px;
+            display: block;
+            left: 25px;
+            border-radius: 10px;
+            background-color:white ;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           
+        }
+        .pass-box{
+            position: absolute;
+            top: 290px;
+            left: 25px;
+            border-radius: 10px;
+            background-color: white;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .contact-box{
+            position: absolute;
+            top: 220px;
+            left: 25px;
+            border-radius: 10px;
+            background-color: white;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+       
+        label{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+      span{
+        position: absolute;
+        left: 5px;
+        top: 27px;
+      }
+      input{
+        position: absolute;
+        left: 27px;
+        top: 30px;
+        border: none;
+        text-align: center;
+        color: rgb(8, 8, 85);
+        font-weight: 500;
+        font-size: 12px;
+        
+      }
+      input:focus{
+        text-align: center;
+        outline: none;
+      }
+      .inp-text-place::placeholder{
+        text-align: center;
+    
+      }
+      input[type="password"]::placeholder{
+        color: red;
+      }
+     
+    button{
+        position: absolute;
+        top:370px;
+        left:25px;
+        width: 200px;
+        padding: 8px;
+        border-radius: 20px;
+        background-color: rgb(17, 17, 68);
+       border: none;
+       color: whitesmoke;
+       font-weight: 800;
+       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       font-size: 20px;
+
+    }
+    button a{
+        text-decoration: none;
+        color: white;
+    }
+    button:hover{
+        background-color: rgb(38, 38, 127);
+    box-shadow: 2px 2px 5px  blue;
+    }
+    .name-box:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+    .mailbox:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+    .pass-box:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+    .contact-box:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+
+    @keyframes slowup {
+        0%{
+           
+           transform:translateY(200px);
+            opacity: 0.1;
+        }
+        100%{
+         
+            opacity: 1;
+          
+        }
+        
+     }
+    .back-to{
+       position: absolute;
+       top: 20px;
+       left:25px;
+       text-decoration: none;
+       font-size: 25px;
+    }
+    .back-to:hover{
+        transform: scale(1.2);
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-box">
+            <a href="./loginform.html" class="back-to">👈🏼</a>
+            <div class="logo"><img src="./logo.png" alt=""></div>
+
+            <div class="name-box">
+                <label for="">User-name</label><br>
+                <span>👤</span><input type="text" placeholder="Name" class="inp-text-place" required>
+           </div>
+
+           <div class="mailbox">
+                <label for="">Email Address</label><br>
+                <span>✉️</span><input type="text" placeholder="Username@gmail.com" class="inp-text-place" required >
+           </div>
+
+           <div class="contact-box">
+                <label for="">Contact-details</label><br>
+                <span>📞</span><input type="text" placeholder="Number" class="inp-text-place" required>
+          </div>
+
+            <div class="pass-box" class="pswd">
+                <label for="">Password</label><br>
+            
+             <span>🔑</span>
+            <input type="password" placeholder="*  *  *  *  *  *  *  *"  class="inp-text-place" required>
+            
+       </div>
+      
+        <button><a href="./loginform.html">Sign up</a></button>
+
+        <div class="signup">
+           
+        </div>
+       
+ </div>
+        
+        
+        
+
+    </div>
+</body>
+</html>
