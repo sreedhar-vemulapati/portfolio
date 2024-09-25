@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            user-select: none;
+            cursor: pointer;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+            background-color: rgb(43, 40, 40);
+        }
+        tr,td{
+            text-align: center;
+            border-radius: 7px;
+            font-weight: bolder;
+           
+           
+            
+        }
+        table{
+           border-radius: 10px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           padding: 10px;
+           border-spacing: 10px 10px;
+           background-color: rgb(44, 42, 42);
+           box-shadow: 2px 20px 70px black;
+        }
+        td{
+            padding: 15px;
+            background-color: rgb(57, 55, 55);
+            
+           
+           
+           
+        }
+        .firstrow td:first-child{
+            background-color: rgb(165, 163, 121);
+            padding: 10px;
+            
+        }
+        .row td:first-child{
+            background-color: red;
+        }
+        .lastrow td:last-child{
+            border: none;
+            background-color: rgb(21, 94, 230);
+            backdrop-filter: blur(10px);
+            border-radius: 5px;
+        }
+      
+       input{
+        border: none;
+        outline: none;
+        background-color: rgb(165, 163, 121);
+        overflow: visible;
+        
+       }
+       
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <table>
+            <tr class="firstrow"><td colspan="4"><input readonly id="display" placeholder="Calculater....."></td></tr>
+            <tr class="row">
+                <td colspan="2" onclick="reset()">Ac</td>
+                <td onclick="appendToDisplay('/')">/</td>
+                <td onclick="appendToDisplay('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('7')">7</td>
+                <td onclick="appendToDisplay('8')">8</td>
+                <td onclick="appendToDisplay('9')">9</td>
+                <td onclick="appendToDisplay('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('4')">4</td>
+                <td onclick="appendToDisplay('5')">5</td>
+                <td onclick="appendToDisplay('6')">6</td>
+                <td rowspan="2" onclick="appendToDisplay('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="appendToDisplay('1')">1</td>
+                <td onclick="appendToDisplay('2')">2</td>
+                <td onclick="appendToDisplay('3')">3</td>
+            </tr>
+            <tr class="lastrow">
+                <td onclick="appendToDisplay('0')">0</td>
+                <td onclick="appendToDisplay('00')">00</td>
+                <td onclick="appendToDisplay('.')">.</td>
+                <td onclick="result()">=</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+       const display=document.getElementById("display");
+       function appendToDisplay(input){
+        display.value+=input;
+       }
+       function reset(){
+        display.value=""
+       }
+       function result(){
+        display.value=eval(display.value)
+       }
+
+    </script>
+</body>
+</html>
