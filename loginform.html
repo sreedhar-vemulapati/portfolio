@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background-color: rgb(197, 210, 233);
+        }
+        .container{
+           display: flex;
+           justify-content: center;
+           align-items: center;
+            height: 100vh;
+            animation: slowdown 1s linear  1 ;
+           
+           
+        }
+        .logo-box{
+            position: relative;
+            width: 250px;
+            height: max-content;
+            background-color: rgb(226, 233, 241);
+            border-radius: 10px;
+        }
+        img{
+            position: absolute;
+            top: 40px;
+            height: 50px;
+            width: 50px;
+            mix-blend-mode:multiply;
+        }
+        .logo{
+            display: flex;
+            justify-content: center;
+        }
+        .mailbox{
+            position: absolute;
+            top: 130px;
+            display: block;
+            left: 25px;
+            border-radius: 10px;
+            background-color:white ;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+           
+        }
+        .pass-box{
+            position: absolute;
+            top: 209px;
+            left: 25px;
+            border-radius: 10px;
+            background-color: white;
+            height:max-content;
+            width: 80%;
+            padding: 20px;
+            font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        label{
+            position: absolute;
+            left: 5px;
+            top: 5px;
+        }
+      span{
+        position: absolute;
+        left: 5px;
+        top: 27px;
+      }
+      input{
+        position: absolute;
+        left: 27px;
+        top: 30px;
+        border: none;
+        text-align: center;
+        color: rgb(8, 8, 85);
+        font-weight: 500;
+        font-size: 12px;
+        
+      }
+      input:focus{
+        text-align: center;
+        outline: none;
+      }
+      .inp-text-place::placeholder{
+        text-align: center;
+    
+      }
+     
+    button{
+        position: absolute;
+        top:290px;
+        left:25px;
+        width: 200px;
+        padding: 8px;
+        border-radius: 20px;
+        background-color: rgb(17, 17, 68);
+       border: none;
+       color: whitesmoke;
+       font-weight: 800;
+       font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       font-size: 20px;
+
+    }
+    button:hover{
+        background-color: rgb(38, 38, 127);
+    box-shadow: 2px 2px 5px  blue;
+    }
+    .mailbox:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+    .pass-box:hover{
+        box-shadow: 2px 2px 5px black;
+        transform: scale(1.11);
+    }
+   .signup{
+   
+    display: flex;
+    justify-content: space-evenly;
+   margin-top: 350px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+   
+   }
+   a{
+    padding: 20px;
+   }
+     @keyframes slowdown {
+        0%{
+            margin-top: -100px;
+           transform: translateY(-100px);
+            opacity: 0.1;
+        }
+        100%{
+          
+            opacity: 1;
+        }
+        
+     }
+     button a{
+        text-decoration: none ;
+        color: whitesmoke;
+     }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-box">
+            <div class="logo"><img src="./logo.png" alt=""></div>
+
+           <div class="mailbox">
+             <label for="">Email Address</label><br>
+           <span>✉️</span><input type="text" placeholder="Username@gmail.com" class="inp-text-place">
+          </div>
+
+        <div class="pass-box" class="pswd">
+            <label for="">Password</label><br>
+             <span>🔑</span>
+            <input type="password" placeholder="*  *  *  *  *  *  *  *"  class="inp-text-place">
+       </div>
+      
+        <button><a href="https://www.linkedin.com/in/sreedhar-reddy-712848250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_ap">Login</a></button>
+
+        <div class="signup">
+            <a href="./signupform.html">Sign up</a>
+            <a href="">Forget password ?</a>
+        </div>
+       
+ </div>
+        
+        
+        
+
+    </div>
+</body>
+</html>

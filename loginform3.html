@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>*{
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        height: 100vh;
+        background-color: rgb(12, 12, 12);
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+        .container{
+            position: fixed;
+            border: 2px solid rgb(152, 147, 147);
+            width: 300px;
+            height: 350px;
+            border-radius: 20px;
+            overflow: hidden;
+            display: block;
+            background-color:transparent;
+            backdrop-filter: blur(1px);
+            z-index: 1;
+        }
+        .user-box{
+            position: absolute;
+            top: 90px;
+            left: 65px;
+        }
+        .pass-box{
+            position: absolute;
+            top: 150px;
+            left: 65px;
+        }
+        h3{
+            text-align: center;
+            margin-top: 30px;
+            color: white;
+        }
+      button{
+       margin-top: 150px;
+       height: 35px;
+       width: 170px;
+       background-color: white;
+       border: none;
+       border-radius: 5px;
+       font-size: 15px;
+       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+      button:hover{
+        box-shadow: 2px 2px 5px 5px white;
+      }
+      input{
+        height: 29px;
+        
+        background-color: gray;
+        border: none;
+        border-radius: 2px;
+      }
+      label{
+        color: white;
+        font-size: 13px;
+      }
+input::placeholder{
+    color: rgb(194, 201, 208);
+    padding-left: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+input:focus{
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+
+.last-box{
+    display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   margin-top: 30px;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: gray;
+    font-weight: 400;
+}
+.shape1{
+    position: absolute;
+   margin-top: -230px;
+   margin-left: -220px;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background:linear-gradient(70deg,blue,rgb(2, 244, 244));
+    z-index:-1;
+    
+}
+.shape2{
+    position: absolute;
+    top: 80px;
+    margin-left: 50px;
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    background:linear-gradient(70deg,rgb(250, 140, 6),rgb(244, 54, 2));
+   
+    
+}
+.background{
+    position: fixed;
+
+}
+    </style>
+</head>
+<body>
+   <div class="background">
+    <div class="shape1"></div>
+    <div class="shape2"></div>
+   </div>
+    <div class="container">
+        <h3>Login Here</h3>
+      <div class="user-box">
+        <label for="">User-name</label><br>
+        <input type="text" placeholder="User-name" required="">
+      </div>
+      <div class="pass-box">
+        <label for="">Password</label><br>
+        <input type="text" placeholder="Password" required="">
+      </div>
+      <h3><button>Log in</button></h3>
+       <div class="last-box">
+        <a href=""><i class="fa fa-google"></i>  Google</a>
+        <a href=""><i class="fa fa-facebook"></i>  Facebook</a>
+       </div>
+       
+    </div>
+</body>
+</html>
